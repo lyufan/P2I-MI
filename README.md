@@ -13,4 +13,6 @@ Arxiv: [Prediction Exposes Your Face: Black-box Model Inversion via Prediction A
 
 ![](https://img.shields.io/badge/arXiv-2407.08127-AE2525)
 
+![](https://github.com/lyufan/P2I-MI/blob/main/assets/figure2.pdf)
+![](https://github.com/lyufan/P2I-MI/blob/main/assets/figure3.pdf)
 
