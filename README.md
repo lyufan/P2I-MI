@@ -19,7 +19,7 @@ conda activate p2i
 
 ### Dataset
 
-- [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
-- [FaceScrub](http://vintage.winklerbros.net/facescrub.html)
-- [Pubfig83](https://vision.seas.harvard.edu/pubfig83/)
+- [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) (we devide the CelebA follow the [KED-MI](https://github.com/SCccc21/Knowledge-Enriched-DMI/issues/1),the config file can be found in our "./data" and "./inversion/data_files")
+- [FaceScrub](http://vintage.winklerbros.net/facescrub.html) (config files in "./inversion/data_files")
+- [Pubfig83](https://vision.seas.harvard.edu/pubfig83/) (as above)
 - [FFHQ](https://drive.google.com/drive/folders/1tZUcXDBeOibC6jcMCtgRRz67pzrAHeHL)
