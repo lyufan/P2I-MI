@@ -23,3 +23,8 @@ conda activate p2i
 - [FaceScrub](http://vintage.winklerbros.net/facescrub.html) (config files in "./inversion/data_files")
 - [Pubfig83](https://vision.seas.harvard.edu/pubfig83/) (as above)
 - [FFHQ](https://drive.google.com/drive/folders/1tZUcXDBeOibC6jcMCtgRRz67pzrAHeHL)
+
+### Models
+
+- Standard setting: we follow previous work (like [KED-MI](https://drive.google.com/drive/folders/1U4gekn72UX_n1pHdm9GQUQwwYVDvpTfN) or [PLG-MI](https://drive.google.com/drive/folders/1Cf2O2MVvveXrBcdBEWDi-cMGzk0y_AsT)) to use their target models and evaluation models, and put them in folder: "./inversion/checkpoints".
+- Distribution shifts setting: You can download target models and evaluation models at: https://drive.google.com/drive/folders/1QCm90NAxDWckjRBSvjYxawjLdOtPSpt5?usp=sharing, and put them in folder: "./inversion/checkpoints"
