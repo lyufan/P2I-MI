@@ -32,20 +32,20 @@ conda activate p2i
 
 # Training dataset Preparation
 ### 1.Generate synthesized data
-```python
+```bash
 python generate_imgs.py
 ```
 + "--stylegan_model_path": Download StyleGAN model from this [link](https://drive.google.com/file/d/1bMTNWkh5LArlaWSc_wa8VKyq2V42T2z0/view?usp=sharing), put it in folder :"./pixel2style2pixel/pretrained_models"
 ### 2.Select real public data
-```python
+```bash
 python top_n_select.py --model target_model --data_name public_data_source
 ```
 ### 3.Get prediction
-```python
+```bash
 python get_logscore.py
 ```
 # Train
-```python
+```bash
 python train.py
 ```
 + "--real_dataset_path": your select data's prediction from public dataset
@@ -56,7 +56,7 @@ python train.py
 + "--parsing_model_path": Parsing model from this [link](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812), put it in folder :"./pretrained_models"
 + "--log_path": Checkpoint saved path
 # Aligned Ensemble Attack
-```python
+```bash
 python ensemble_attack.py
 ```
 + "--pretrained_model_path": Checkpoint in log_path/001/xxx.pth.tar
