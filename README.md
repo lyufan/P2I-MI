@@ -28,3 +28,26 @@ conda activate p2i
 
 - Standard setting: we follow previous work (like [KED-MI](https://drive.google.com/drive/folders/1U4gekn72UX_n1pHdm9GQUQwwYVDvpTfN) or [PLG-MI](https://drive.google.com/drive/folders/1Cf2O2MVvveXrBcdBEWDi-cMGzk0y_AsT)) to use their target models and evaluation models, and put them in folder: "./inversion/checkpoints".
 - Distribution shifts setting: You can download target models and evaluation models at: https://drive.google.com/drive/folders/1QCm90NAxDWckjRBSvjYxawjLdOtPSpt5?usp=sharing, and put them in folder: "./inversion/checkpoints"
+
+# Training dataset Preparation
+### Generate synthesized data
+```python
+python generate_imgs.py
+```
+### Select real public data
+```python
+python top_n_select.py --model target_model --data_name public_data_source
+```
+### Get prediction
+```python
+python get_logscore.py
+```
+# Train
+```python
+python train.py
+```
+
+# Aligned Ensemble Attack
+```python
+python ensemble_attack.py
+```
