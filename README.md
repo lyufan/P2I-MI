@@ -28,17 +28,19 @@ conda activate p2i
 
 - Standard setting: we follow previous work (like [KED-MI](https://drive.google.com/drive/folders/1U4gekn72UX_n1pHdm9GQUQwwYVDvpTfN) or [PLG-MI](https://drive.google.com/drive/folders/1Cf2O2MVvveXrBcdBEWDi-cMGzk0y_AsT)) to use their target models and evaluation models, and put them in folder: "./inversion/checkpoints".
 - Distribution shifts setting: You can download target models and evaluation models at: https://drive.google.com/drive/folders/1QCm90NAxDWckjRBSvjYxawjLdOtPSpt5?usp=sharing, and put them in folder: "./inversion/checkpoints"
+- Download pretrained model from this [link](https://drive.google.com/file/d/1RnnBL77j_Can0dY1KOiXHvG224MxjvzC/view?usp=sharing) and put it in folder "./pretrained_models".
 
 # Training dataset Preparation
-### Generate synthesized data
+### 1.Generate synthesized data
 ```python
 python generate_imgs.py
 ```
-### Select real public data
++ "--stylegan_model_path": Download StyleGAN model from this [link](https://drive.google.com/file/d/1bMTNWkh5LArlaWSc_wa8VKyq2V42T2z0/view?usp=sharing), put it in folder :"./pixel2style2pixel/pretrained_models"
+### 2.Select real public data
 ```python
 python top_n_select.py --model target_model --data_name public_data_source
 ```
-### Get prediction
+### 3.Get prediction
 ```python
 python get_logscore.py
 ```
@@ -46,8 +48,16 @@ python get_logscore.py
 ```python
 python train.py
 ```
-
++ "--real_dataset_path": your select data's prediction from public dataset
++ "--dataset_path": synthesized data's prediction
++ "--label_path": your saved seed files from "generate_imgs.py"
++ "--stylegan_model_path": StyleGAN model from this [link](https://drive.google.com/file/d/1bMTNWkh5LArlaWSc_wa8VKyq2V42T2z0/view?usp=sharing) in "./pixel2style2pixel/pretrained_models"
++ "--arcface_model_path": Arcface model from this [link](https://drive.google.com/file/d/1coFTz-Kkgvoc_gRT8JFzqCgeC3lAFWQp/view?usp=sharing), put it in folder :"./pretrained_models"
++ "--parsing_model_path": Parsing model from this [link](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812), put it in folder :"./pretrained_models"
++ "--log_path": Checkpoint saved path
 # Aligned Ensemble Attack
 ```python
 python ensemble_attack.py
 ```
++ "--pretrained_model_path": Checkpoint in log_path/001/xxx.pth.tar
++ "--input": your select data's prediction from public dataset(real_dataset_path in train.py)
